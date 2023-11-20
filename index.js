@@ -7,7 +7,7 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const fileupload = require("express-fileupload");
 
-const domain = "127.0.0.1"
+const domain = "https://agreeen.onrender.com"
 
 const staff_username = "kali"
 const staff_password_hash = "3aeffb032a51d224814e7c8d876ec433aae4ad44cd6362dc26b6b9cb750c7620"
