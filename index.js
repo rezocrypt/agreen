@@ -13,7 +13,7 @@ const staff_username = "kali"
 const staff_password_hash = "3aeffb032a51d224814e7c8d876ec433aae4ad44cd6362dc26b6b9cb750c7620"
 
 function generate_qr(id) {
-    QRCode.toFile('db/qr/' + id + ".png", 'http://' + domain + ':80/seeplant/' + id, {
+    QRCode.toFile('db/qr/' + id + ".png", 'http://' + domain + '/seeplant/' + id, {
         errorCorrectionLevel: 'H'
     }, function (err) {
         if (err) throw err;
