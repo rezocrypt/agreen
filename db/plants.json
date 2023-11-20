@@ -1,0 +1,193 @@
+{
+    "plants": {
+        "a311adb805d138fc38cc67256cf0fa5b": {
+            "type": "Ալոե",
+            "status": "well",
+            "location": "40.214126;44.557914",
+            "description": "Նախատեսված է բուսական յուղ ստանալու համար:",
+            "plantation_year": "2004"
+        },
+        "c5241a257a28292beb3b2223b1de5400": {
+            "type": "Եղևնի",
+            "status": "normal",
+            "location": "40.214126;44.559914",
+            "description": "Տնկվել է Ամերիկյան համալսարանի ուսանողների կողմից:",
+            "plantation_year": "2003"
+        },
+        "2d62f4ccaa7669cc926a03c95d0b4a83": {
+            "type": "Բարդի",
+            "status": "bed",
+            "location": "40.214126;44.555914",
+            "description": "Տնկվել է Բուսաբանական այգու տնօրինության կողմից:",
+            "plantation_year": "2001"
+        },
+        "7d42a5ea9b9ec3c296a100d77a42c0eb": {
+            "type": "Հացենի",
+            "status": "well",
+            "location": "40.214126;44.553914",
+            "description": "Տնկվել է բուսաբանական այգու հարավային հատվածում խոնավությունից խուսափելու համար",
+            "plantation_year": "2003"
+        },
+        "a046c932a32f8289a245666501e423d0": {
+            "type": "Սոսի",
+            "status": "normal",
+            "location": "40.213126;44.557914",
+            "description": " Տնկվելուց ունեցել է հիվանդություն սակայն ապաքինվել է:",
+            "plantation_year": "2001"
+        },
+        "05e1b91c85aea7e6f1a22c57a28ce78f": {
+            "type": "Կակտուս",
+            "status": "bed",
+            "location": "40.213126;44.553914",
+            "description": "Ունի առողջական խնդիրներ:",
+            "plantation_year": "2003"
+        },
+        "e880418303de6597e96a6893834e535d": {
+            "type": "Կեչի",
+            "status": "well",
+            "location": "40.213126;44.5556314",
+            "description": "Բերված է Ռուսաստանից",
+            "plantation_year": "2023"
+        },
+        "aed81eba45e371f88e0d68ae6da62a09": {
+            "type": "Ընկուզենի",
+            "status": "well",
+            "location": "40.210326;44.559414",
+            "description": "Նոր ընկուզենին բերված է Գերմանիայից",
+            "plantation_year": "2003"
+        },
+        "8eeb1a8f931ee075b9b6a891f0be20f1": {
+            "type": "Սոսի",
+            "status": "well",
+            "location": "40.210326;44.555414",
+            "description": "Տրամադրվել է պետության կողմից փորձարկելու համար",
+            "plantation_year": "2003"
+        },
+        "bfb69719a46b72ae12e0205b544fa459": {
+            "type": "Թխկի",
+            "status": "normal",
+            "location": "40.212326;44.556414",
+            "description": "Բերված է Մարտունուց",
+            "plantation_year": "2020"
+        },
+        "f432c1a945812fba544d3bfe4c6ff608": {
+            "type": "Կեչի",
+            "status": "normal",
+            "location": "40.212326;44.554414",
+            "description": "Փորձնական օրինակ",
+            "plantation_year": "2023"
+        },
+        "6460d583914c597c7a61e6f06995d22b": {
+            "type": "Կեչի",
+            "status": "normal",
+            "location": "40.211326;44.554414",
+            "description": "Փորձնական օրինակ",
+            "plantation_year": "2023"
+        },
+        "d65883e3f80957804553a037117ada7c": {
+            "type": "Կեչի",
+            "status": "normal",
+            "location": "40.211626;44.558614",
+            "description": "Փորձնական օրինակ",
+            "plantation_year": "2023"
+        },
+        "4f3b53388280697d5e11712dde5f399a": {
+            "type": "Կեչի",
+            "status": "normal",
+            "location": "40.208626;44.557614",
+            "description": "Փորձնական օրինակ",
+            "plantation_year": "2023"
+        },
+        "e758d73618d6154b18d454108fa67170": {
+            "type": "Կեչի",
+            "status": "normal",
+            "location": "40.208926;44.556614",
+            "description": "Փորձնական օրինակ",
+            "plantation_year": "2023"
+        },
+        "9395f1924d52e41d78506f2f087906bb": {
+            "type": "Կեչի",
+            "status": "normal",
+            "location": "40.208926;44.553614",
+            "description": "Փորձնական օրինակ",
+            "plantation_year": "2023"
+        },
+        "d882e3cbb0f649e578d5b398423ebe18": {
+            "type": "Կեչի",
+            "status": "normal",
+            "location": "40.208326;44.554614",
+            "description": "Փորձնական օրինակ",
+            "plantation_year": "2023"
+        },
+        "12684bac52a961f54b1f226c54273713": {
+            "type": "Կակտուս",
+            "status": "well",
+            "location": "40.207326;44.553614",
+            "description": "Փորձնական օրինակ",
+            "plantation_year": "2022"
+        },
+        "7649129c968458b36d8b19813ea5a8d1": {
+            "type": "Կակտուս",
+            "status": "well",
+            "location": "40.207326;44.557214",
+            "description": "Փորձնական օրինակ",
+            "plantation_year": "2022"
+        },
+        "3511f910216a954190ab5fb7d8832aa1": {
+            "type": "Կակտուս",
+            "status": "well",
+            "location": "40.207926;44.553414",
+            "description": "Փորձնական օրինակ",
+            "plantation_year": "2022"
+        },
+        "7e8a7e009d1ec1c08b6a82831ca91c63": {
+            "type": "Կակտուս",
+            "status": "well",
+            "location": "40.207726;44.554414",
+            "description": "Փորձնական օրինակ",
+            "plantation_year": "2022"
+        },
+        "7c66098717137b62f8e4a33088139e76": {
+            "type": "Կակտուս",
+            "status": "well",
+            "location": "40.208326;44.556214",
+            "description": "Փորձնական օրինակ",
+            "plantation_year": "2022"
+        },
+        "4f089fa10fd525a0a093ce068679ad82": {
+            "type": "Եղևնի",
+            "status": "normal",
+            "location": "40.207126;44.555914",
+            "description": "Փորձնական օրինակ բերված Ռուսաստանից",
+            "plantation_year": "2020"
+        },
+        "f240f025bc771519631e3d72ddd69948": {
+            "type": "Եղևնի",
+            "status": "normal",
+            "location": "40.206126;44.556914",
+            "description": "Փորձնական օրինակ բերված Ռուսաստանից",
+            "plantation_year": "2020"
+        },
+        "630a54f54e2efe5f8d23f6e4105ab46e": {
+            "type": "Եղևնի",
+            "status": "normal",
+            "location": "40.206126;44.554914",
+            "description": "Փորձնական օրինակ բերված Ռուսաստանից",
+            "plantation_year": "2020"
+        },
+        "953371cfd7ee52dfb49d99cc1c78c57a": {
+            "type": "Եղևնի",
+            "status": "normal",
+            "location": "40.212126;44.559914",
+            "description": "Փորձնական օրինակ բերված Ռուսաստանից",
+            "plantation_year": "2020"
+        },
+        "1b783f2cddb24acbc5443af4855bb4bf": {
+            "type": "Եղևնի",
+            "status": "normal",
+            "location": "40.213126;44.560114",
+            "description": "Փորձնական օրինակ բերված Ռուսաստանից",
+            "plantation_year": "2020"
+        }
+    }
+}

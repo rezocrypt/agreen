@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ավելացնել տնկի</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h2 {
+            color: #4caf50; /* Green title text color */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        select,
+        input,
+        file {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #4caf50; /* Green border */
+            border-radius: 4px;
+        }
+
+        .file-input-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .file-input-button {
+            background-color: #4caf50; /* Green button */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-block;
+            overflow: hidden;
+        }
+
+        .file-input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50; /* Green button */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            margin-bottom: 8px;
+            color: orange;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 8px;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/staff/addplant" method="post" enctype="multipart/form-data">
+        <h2>Ավելացնել նոր տնկի</h2>
+        <% if (just_added) { %>
+        <p>Նոր տնկին հաջողությամբ ավեալցվեց, <a href="/downloadqr/<%= id %>"> Կարող եք ներբեռնել QR կոդը այստեղ</a></p>
+        <% } %>
+        <label for="type">Տնկիների տարատեսակ</label>
+        <select id="type" name="type">
+            <% for (const key in plant_types) { %>
+            <option value="<%= key %>">
+                <%= key %>
+            </option>
+            <% } %>
+        </select>
+
+        <label for="description">Նկարագրություն</label>
+        <input type="text" id="description" name="description">
+
+        <label for="status">Ընտրել կարգավիճակը</label>
+        <select id="status" name="status">
+            <option value="well">Լավ</option>
+            <option value="normal">Նորմալ</option>
+            <option value="bed">Վատ</option>
+        </select>
+
+        <label for="plantation_year">Տնկման տարեթիվ:</label>
+        <input type="text" id="plantation_year" name="plantation_year">
+
+        <label for="location">Կոորդինատներ (GPS):</label>
+        <input type="text" id="location" name="location" />
+
+        <label for="plant_photo">Տնկիի նկար</label>
+        <div class="file-input-container">
+            <label class="file-input-button">
+                Ներբեռնել
+                <input type="file" id="plant_photo" name="plant_photo" accept="image/*" class="file-input" capture="camera">
+            </label>
+        </div>
+
+        <input type="submit" value="Ավելացնել">
+        <a href="/staff">Վերադառնալ</a>
+    </form>
+
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    function (position) {
+                        const latitude = position.coords.latitude;
+                        const longitude = position.coords.longitude;
+                        const output = latitude.toString() + ';' + longitude.toString();
+                        document.getElementById("location").value = output;
+                        return output;
+                    },
+                    function (error) {
+                        console.error('Error getting location:', error.message);
+                    }
+                );
+            } else {
+                alert('Geolocation is not supported by your browser.');
+            }
+        }
+
+        getLocation();
+    </script>
+</body>
+
+</html>

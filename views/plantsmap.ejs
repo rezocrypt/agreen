@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ՏՆկիների քարտեզ</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        .download-link,
+        .open-link {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 8px 12px;
+            border: 1px solid #007BFF;
+            border-radius: 4px;
+            color: #007BFF;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .download-link:hover,
+        .open-link:hover {
+            background-color: #007BFF;
+            color: #fff;
+        }
+        .plant-image {
+            /* text-align: center; */
+            height: auto;
+            width: 150px;
+            display: block;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 5px;
+            margin-bottom: 8px;
+        }
+        .plant-info {
+            margin-bottom: 10px;
+        }
+        .imgdiv{
+            /* text-align: center; */
+        }
+        .desc-cl {
+            text-align: left !important;
+        }
+        .type-cl {
+            text-align: center !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map" style="height: 99vh;"></div>
+    <script>
+        // Initialize the map
+        var mymap = L.map('map').setView([40.213281, 44.555109], 15);
+
+        // Add a tile layer (you can use different tile providers)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(mymap);
+        let coordinatesArray;
+        let latitude;
+        let longitude;
+        let marker;
+        <% for (let key in plants_data) { %>
+            console.log("<%= plants_data[key]["location"] %>");
+            coordinatesArray = "<%= plants_data[key]["location"] %>".split(";");
+            latitude = parseFloat(coordinatesArray[0]);
+            longitude = parseFloat(coordinatesArray[1]);
+            console.log("++++", latitude, longitude);
+            marker = L.marker([latitude, longitude]).addTo(mymap);
+            marker.bindPopup(` <div class='imgdiv'>
+            <b><span class='type-cl'><%= plants_data[key]['type'] %></span></b><br>
+            <img class="plant-image" src="photos/<%= key %>.png" alt="" srcset="">
+
+            <strong>Նկարագրություն</strong>
+            <span class='desc-cl'><%= plants_data[key]['description'] %></span></div>
+            <br>
+            <strong>Կարգավիճակը՝:</strong>
+                <% if(plants_data[key]["status"] === "well"){ %>
+                    <span style="color: green;">Լավ</span>
+                  <% } else if(plants_data[key]["status"] === "normal"){ %>  
+                    <span style="color: orange;">Նորմալ</span>
+                    <% } else { %>
+                    <span style="color: red;">Վատ</span>
+                    <% } %>
+                    <div class="plant-info">
+                <a href="/downloadqr/<%= key %>" class="download-link">Ներբեռնել QR կոդը</a>
+                <a href="/seeplant/<%= key %>" class="open-link">Տեսնել ավելին</a>
+            </div>
+           
+                    `);
+
+         <% } %>
+
+
+    </script>
+
+</body>
+
+</html>

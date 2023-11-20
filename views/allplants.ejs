@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Բոլոր տնկիները</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #33B864;
+            font-weight: bolder;
+            font-size: 35px;
+            /* Greenish color */
+            margin-bottom: 20px;
+        }
+
+
+        .back-btn {
+            margin-bottom: 20px;
+        }
+
+        .back-btn a {
+            display: inline-block;
+            padding: 8px 12px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-btn a:hover {
+            background-color: #0056b3;
+        }
+
+        .plant-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            text-align: center;
+            display: inline-block;
+            width: calc(100% - 20px);
+            /* Adjusted width calculation for margins */
+            box-sizing: border-box;
+        }
+
+        .plant-image {
+            max-height: 200px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .plant-info {
+            margin-bottom: 10px;
+        }
+
+        .download-link,
+        .open-link {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 8px 12px;
+            border: 1px solid #007BFF;
+            border-radius: 4px;
+            color: #007BFF;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .download-link:hover,
+        .open-link:hover {
+            background-color: #007BFF;
+            color: #fff;
+        }
+
+        /* Media queries for responsive design */
+        @media (min-width: 600px) {
+            .plant-container {
+                width: 90%;
+                margin-left: 4%;
+                margin-right: 4%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .plant-container {
+                width: 40%;
+                /* Three items per row */
+                margin-left: 4%;
+                margin-right: 4%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .plant-container {
+                width: 30%;
+                /* Four items per row */
+                margin-left: 1.5%;
+                margin-right: 1.5%;
+            }
+        }
+
+        .type-span{
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="back-btn">
+        <a href="/staff">Վերադառնալ</a>
+    </div>
+    <h2>Բոլոր տնկիները</h2>
+    <% for (let key in plants) { %>
+        <div class="plant-container">
+            <img class="plant-image" src="photos/<%= key %>.png" alt="" srcset="">
+            <div class="plant-info">
+                <span class="type-span">Տեսակը՝</span>
+                <%= plants[key]["type"] %>
+            </div>
+            <div class="plant-info">
+                <strong>Նկարագրություն՝</strong>
+                <%= plants[key]["description"] %>
+            </div>
+            <div class="plant-info">
+                <strong>Կարգավիճակը՝:</strong>
+                <% if(plants[key]["status"] === "well"){ %>
+                    <span style="color: green;">Լավ</span>
+                  <% } else if(plants[key]["status"] === "normal"){ %>  
+                    <span style="color: orange;">Նորմալ</span>
+                    <% } else { %>
+                    <span style="color: red;">Վատ</span>
+                    <% } %>
+            </div>
+            <div class="plant-info">
+                <a href="/downloadqr/<%= key %>" class="download-link">Ներբեռնել QR կոդը</a>
+                <a href="/seeplant/<%= key %>" class="open-link">Տեսնել ավելին</a>
+            </div>
+        </div>
+        <% } %>
+</body>
+
+</html>
