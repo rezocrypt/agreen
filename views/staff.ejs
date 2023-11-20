@@ -11,11 +11,13 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f5e1; /* Light greenish background */
+            background-color: #f0f5e1;
+            /* Light greenish background */
         }
 
         header {
-            background-color: #2c3e50; /* Dark gray-blue header */
+            background-color: #2c3e50;
+            /* Dark gray-blue header */
             color: white;
             padding: 20px;
             display: flex;
@@ -27,12 +29,14 @@
         header h1 {
             margin: 0;
             font-size: 24px;
-            color: white; /* White text color */
+            color: white;
+            /* White text color */
         }
 
         a {
             text-decoration: none;
-            color: #2c3e50; /* Dark gray-blue text color */
+            color: #2c3e50;
+            /* Dark gray-blue text color */
         }
 
         .logout-btn {
@@ -40,7 +44,8 @@
         }
 
         .logout-btn button {
-            background-color: #27ae60; /* Green button */
+            background-color: #27ae60;
+            /* Green button */
             color: white;
             text-decoration: none;
             padding: 10px 20px;
@@ -63,7 +68,8 @@
 
         .action-buttons a,
         .show-all-btn a {
-            background-color: #2ecc71; /* Green button */
+            background-color: #2ecc71;
+            /* Green button */
             color: white;
             text-decoration: none;
             padding: 15px 30px;
@@ -71,35 +77,52 @@
             margin: 10px;
             border: none;
             cursor: pointer;
+            width: 100%;
             transition: background-color 0.3s ease;
+        }
+
+
+        .action-buttons,
+        .show-all-btn  {
+            margin: 200px;
         }
 
         .action-buttons a:hover,
         .show-all-btn a:hover {
             background-color: #239556;
         }
+
+        .btn-class {
+            background-color:#27ae60;
+            padding: 10px;
+            margin-left: 10%;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            font-size: 10px;
+        }
     </style>
 </head>
 
 <body>
     <header>
-        <a href="/staff"><h1>Աշխատակազմ</h1></a>
+        <a href="/staff">
+            <h1>Աշխատակազմ</h1>
+        </a>
         <div class="logout-btn">
             <button onclick="window.location.href='/staff/logout'">Դուրս գալ</button>
         </div>
     </header>
 
-        <div class="action-buttons" style="margin-left: 24%;">
-            <a href="/staff/addplant">Ավելացնել տնկի</a>
-            <a href="/staff/createplanttype">Ստեղծել տնկիների տարատեսակ</a>
-        </div>
+        <a href="/staff/addplant" class="btn-class">Ավելացնել տնկի</a><br><br><br><br>
 
-        <div class="show-all-btn" style="margin-left: 24%;margin-top: 100px;">
-            <a href="/allplants">Տեսնել բոլոր տնկիները</a>
-            <a href="/plantsmap">Տեսնել տնկիների քարտեզը</a>
-        </div>
-        <br>
-   
+        <a href="/staff/createplanttype" class="btn-class">Ստեղծել տնկիների տարատեսակ</a><br><br><br><br>
+
+        <a href="/allplants" class="btn-class">Տեսնել բոլոր տնկիները</a><br><br><br><br>
+    
+        <a href="/plantsmap" class="btn-class">Տեսնել տնկիների քարտեզը</a><br><br><br><br>
+    <br>
+
 </body>
 
 </html>
