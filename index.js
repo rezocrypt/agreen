@@ -224,6 +224,6 @@ app.get('/plantsmap', (req, res) => {
 
 // Set the server to listen on port 80
 const port = 80;
-app.listen(port, domain, () => {
+app.listen(port, () => {
     console.log(`Server is listening on http://localhost:${port}`);
 });
